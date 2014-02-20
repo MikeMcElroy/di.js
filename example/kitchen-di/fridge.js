@@ -1,13 +1,15 @@
 import {Inject} from 'di/annotations';
 import {Electricity} from './electricity';
+import {Contents} from './fridge/contents';
 
-@Inject(Electricity)
+@Inject(Electricity, Contents)
 export class Fridge {
-  constructor(electricity) {
+  constructor(electricity, contents) {
     this.electricity = electricity;
+    this.contents = contents;
   }
 
   getEggs() {
-    return '3 eggs';
+    return '' + this.contents.eggs + ' eggs';
   }
 }
