@@ -167,11 +167,11 @@ describe('injector', function() {
 
 
   it('should cache instances', function() {
+    @Inject
     class Car {
       constructor() {}
       start() {}
     }
-    @Inject
 
     var injector = new Injector();
     var car = injector.get(Car);
